@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  admin: one
+  client: one
+  book: one
+
+two:
+  admin: two
+  client: two
+  book: two
