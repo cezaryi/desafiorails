@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :backoffice do
+    get 'dashboard/index'
+  end
   resources :reservations
   resources :books
   resources :categories

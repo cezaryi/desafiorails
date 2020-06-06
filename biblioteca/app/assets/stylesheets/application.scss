@@ -11,5 +11,12 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
+ *= require bootstrap3-wysihtml5
+ *= require morris
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "AdminLTE/AdminLTE";
+@import "AdminLTE/skins/skin-blue";
+
