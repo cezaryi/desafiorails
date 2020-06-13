@@ -3,9 +3,9 @@
 one:
   name: MyString
   author: one
-  categorie: one
+  category: one
 
 two:
   name: MyString
   author: two
-  categorie: two
+  category: two

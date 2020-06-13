@@ -15,7 +15,7 @@ class BooksTest < ApplicationSystemTestCase
     click_on "New Book"
 
     fill_in "Author", with: @book.author_id
-    fill_in "Categorie", with: @book.categorie_id
+    fill_in "Category", with: @book.category_id
     fill_in "Name", with: @book.name
     click_on "Create Book"
 
@@ -28,7 +28,7 @@ class BooksTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Author", with: @book.author_id
-    fill_in "Categorie", with: @book.categorie_id
+    fill_in "Category", with: @book.category_id
     fill_in "Name", with: @book.name
     click_on "Update Book"
 

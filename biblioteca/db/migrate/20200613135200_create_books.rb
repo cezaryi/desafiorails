@@ -3,7 +3,7 @@ class CreateBooks < ActiveRecord::Migration[5.2]
     create_table :books do |t|
       t.string :name
       t.references :author, foreign_key: true
-      t.references :categorie, foreign_key: true
+      t.references :category, foreign_key: true
 
       t.timestamps
     end

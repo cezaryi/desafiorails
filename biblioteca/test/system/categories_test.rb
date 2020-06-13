@@ -10,34 +10,34 @@ class CategoriesTest < ApplicationSystemTestCase
     assert_selector "h1", text: "Categories"
   end
 
-  test "creating a Categorie" do
+  test "creating a Category" do
     visit categories_url
-    click_on "New Categorie"
+    click_on "New Category"
 
     fill_in "Name", with: @category.name
-    click_on "Create Categorie"
+    click_on "Create Category"
 
-    assert_text "Categorie was successfully created"
+    assert_text "Category was successfully created"
     click_on "Back"
   end
 
-  test "updating a Categorie" do
+  test "updating a Category" do
     visit categories_url
     click_on "Edit", match: :first
 
     fill_in "Name", with: @category.name
-    click_on "Update Categorie"
+    click_on "Update Category"
 
-    assert_text "Categorie was successfully updated"
+    assert_text "Category was successfully updated"
     click_on "Back"
   end
 
-  test "destroying a Categorie" do
+  test "destroying a Category" do
     visit categories_url
     page.accept_confirm do
       click_on "Destroy", match: :first
     end
 
-    assert_text "Categorie was successfully destroyed"
+    assert_text "Category was successfully destroyed"
   end
 end
