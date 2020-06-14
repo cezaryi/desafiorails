@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
+
+  resources :reservations
+  resources :librarians
+  get 'admins/index'
+  root 'reservations#index'
+  
   resources :books
   resources :categories
   namespace :backoffice do
     get 'dashboard/index'
   end
-  resources :reservations
   resources :authors
   resources :clients
   devise_for :admins

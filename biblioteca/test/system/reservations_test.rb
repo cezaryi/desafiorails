@@ -14,9 +14,10 @@ class ReservationsTest < ApplicationSystemTestCase
     visit reservations_url
     click_on "New Reservation"
 
-    fill_in "Admin", with: @reservation.admin_id
     fill_in "Book", with: @reservation.book_id
     fill_in "Client", with: @reservation.client_id
+    fill_in "Librarian", with: @reservation.librarian_id
+    check "Rmk" if @reservation.rmk
     click_on "Create Reservation"
 
     assert_text "Reservation was successfully created"
@@ -27,9 +28,10 @@ class ReservationsTest < ApplicationSystemTestCase
     visit reservations_url
     click_on "Edit", match: :first
 
-    fill_in "Admin", with: @reservation.admin_id
     fill_in "Book", with: @reservation.book_id
     fill_in "Client", with: @reservation.client_id
+    fill_in "Librarian", with: @reservation.librarian_id
+    check "Rmk" if @reservation.rmk
     click_on "Update Reservation"
 
     assert_text "Reservation was successfully updated"

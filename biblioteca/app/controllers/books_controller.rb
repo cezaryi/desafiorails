@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.all
+    @books ||= search_books(params)
   end
 
   # GET /books/1
@@ -15,10 +15,14 @@ class BooksController < ApplicationController
   # GET /books/new
   def new
     @book = Book.new
+    select_author
+    select_category
   end
 
   # GET /books/1/edit
   def edit
+    select_author
+    select_category
   end
 
   # POST /books
@@ -62,6 +66,23 @@ class BooksController < ApplicationController
   end
 
   private
+
+  def search_books(parameters)
+    books = Book.joins(:author).all
+    result = books.select{|book|
+    book.author.name.downcase.include?("#{parameters[:books_name]}".downcase) || book.name.downcase.include?("#{parameters[:books_name]}".downcase)  
+    }
+    result
+  end
+
+  def select_author
+    @author_options = Author.all
+  end
+
+  def select_category
+    @category_options = Category.all
+  end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_book
       @book = Book.find(params[:id])

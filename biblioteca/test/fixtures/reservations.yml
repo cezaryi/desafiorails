@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  admin: one
-  client: one
   book: one
+  rmk: false
+  librarian: one
+  client: one
 
 two:
-  admin: two
-  client: two
   book: two
+  rmk: false
+  librarian: two
+  client: two

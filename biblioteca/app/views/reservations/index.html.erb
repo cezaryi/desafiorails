@@ -5,9 +5,10 @@
 <table>
   <thead>
     <tr>
-      <th>Admin</th>
-      <th>Client</th>
       <th>Book</th>
+      <th>Rmk</th>
+      <th>Librarian</th>
+      <th>Client</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -15,9 +16,10 @@
   <tbody>
     <% @reservations.each do |reservation| %>
       <tr>
-        <td><%= reservation.admin %></td>
-        <td><%= reservation.client %></td>
-        <td><%= reservation.book %></td>
+        <td><%= reservation.book.name %></td>
+        <td><%= reservation.rmk %></td>
+        <td><%= reservation.librarian.name %></td>
+        <td><%= reservation.client.name %></td>
         <td><%= link_to 'Show', reservation %></td>
         <td><%= link_to 'Edit', edit_reservation_path(reservation) %></td>
         <td><%= link_to 'Destroy', reservation, method: :delete, data: { confirm: 'Are you sure?' } %></td>

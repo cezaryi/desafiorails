@@ -12,18 +12,23 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :admin_id %>
-    <%= form.text_field :admin_id %>
+    <%= form.label :book_id %>
+    <%= collection_select(:reservation, :book_id, @book_options, :id, :name) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rmk %>
+    <%= form.check_box :rmk %>
+  </div>
+
+  <div class="field">
+    <%= form.label :librarian_id %>
+    <%= collection_select(:reservation, :librarian_id, @librarian_options, :id, :name) %>
   </div>
 
   <div class="field">
     <%= form.label :client_id %>
-    <%= form.text_field :client_id %>
-  </div>
-
-  <div class="field">
-    <%= form.label :book_id %>
-    <%= form.text_field :book_id %>
+    <%= collection_select(:reservation, :client_id, @client_options, :id, :name) %>
   </div>
 
   <div class="actions">

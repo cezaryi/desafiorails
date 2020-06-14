@@ -1,18 +1,23 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Admin:</strong>
-  <%= @reservation.admin %>
+  <strong>Book:</strong>
+  <%= @reservation.book.name %>
+</p>
+
+<p>
+  <strong>Rmk:</strong>
+  <%= @reservation.rmk %>
+</p>
+
+<p>
+  <strong>Librarian:</strong>
+  <%= @reservation.librarian.name %>
 </p>
 
 <p>
   <strong>Client:</strong>
-  <%= @reservation.client %>
-</p>
-
-<p>
-  <strong>Book:</strong>
-  <%= @reservation.book %>
+  <%= @reservation.client.name %>
 </p>
 
 <%= link_to 'Edit', edit_reservation_path(@reservation) %> |

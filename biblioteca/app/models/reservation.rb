@@ -1,5 +1,5 @@
 class Reservation < ApplicationRecord
-  belongs_to :admin
-  belongs_to :client
   belongs_to :book
+  belongs_to :librarian
+  belongs_to :client
 end
