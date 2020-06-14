@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_14_113911) do
+ActiveRecord::Schema.define(version: 2020_06_14_123155) do
 
   create_table "admins", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -52,22 +52,15 @@ ActiveRecord::Schema.define(version: 2020_06_14_113911) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "librarians", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "reservations", force: :cascade do |t|
     t.integer "book_id"
-    t.boolean "rmk"
-    t.integer "librarian_id"
+    t.integer "admin_id"
     t.integer "client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["admin_id"], name: "index_reservations_on_admin_id"
     t.index ["book_id"], name: "index_reservations_on_book_id"
     t.index ["client_id"], name: "index_reservations_on_client_id"
-    t.index ["librarian_id"], name: "index_reservations_on_librarian_id"
   end
 
 end

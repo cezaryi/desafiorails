@@ -15,15 +15,15 @@ class ReservationsController < ApplicationController
   # GET /reservations/new
   def new
     @reservation = Reservation.new
+    select_admin
     select_book
-    select_librarian
     select_client
   end
 
   # GET /reservations/1/edit
   def edit
+    select_admin
     select_book
-    select_librarian
     select_client
   end
 
@@ -69,6 +69,10 @@ class ReservationsController < ApplicationController
 
   private
 
+  def select_admin
+    @admin_options = Admin.all
+  end
+
   def select_book
     @book_options = Book.all
   end
@@ -77,9 +81,6 @@ class ReservationsController < ApplicationController
     @client_options = Client.all
   end
 
-  def select_librarian
-    @librarian_options = Librarian.all
-  end
 
     # Use callbacks to share common setup or constraints between actions.
     def set_reservation
@@ -88,6 +89,6 @@ class ReservationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def reservation_params
-      params.require(:reservation).permit(:book_id, :rmk, :librarian_id, :client_id)
+      params.require(:reservation).permit(:book_id, :admin_id, :client_id)
     end
 end

@@ -17,13 +17,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :rmk %>
-    <%= form.check_box :rmk %>
-  </div>
-
-  <div class="field">
-    <%= form.label :librarian_id %>
-    <%= collection_select(:reservation, :librarian_id, @librarian_options, :id, :name) %>
+    <%= form.label :admin_id %>
+    <%= collection_select(:reservation, :admin_id, @admin_options, :id, :email) %>
   </div>
 
   <div class="field">

@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   resources :reservations
-  resources :librarians
   get 'admins/index'
   root 'reservations#index'
   

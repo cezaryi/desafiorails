@@ -2,12 +2,10 @@
 
 one:
   book: one
-  rmk: false
-  librarian: one
+  admin: one
   client: one
 
 two:
   book: two
-  rmk: false
-  librarian: two
+  admin: two
   client: two
