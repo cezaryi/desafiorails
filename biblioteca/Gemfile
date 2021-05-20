@@ -10,7 +10,7 @@ gem 'sqlite3'
 # Template
 gem 'adminlte2-rails'
 # Use Puma as the app server
-gem 'puma', '~> 3.11'
+gem 'puma', '~> 4.3'
 # Flexible authentication solution for Rails with Warden
 gem 'devise'
 # Use SCSS for stylesheets
